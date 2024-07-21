@@ -2,7 +2,7 @@
 
 # MAHl Music Bot <img src="https://img.shields.io/github/v/release/TeamYukki/YukkiMusicBot?color=black&logo=github&logoColor=black&style=social" alt="RELEASE">
 
-[Yukki Music Bot](https://github.com/TeamYukki/YukkiMusicBot) is a Powerful Telegram Music+Video Bot written in Python using Pyrogram and Py-Tgcalls by which you can stream songs, video and even live streams in your group calls via various sources.
+[Yukki Music Bot](https://github.com/Rohansolanki12/YukkiMusic1) is a Powerful Telegram Music+Video Bot written in Python using Pyrogram and Py-Tgcalls by which you can stream songs, video and even live streams in your group calls via various sources.
 
 * Youtube, Soundcloud, Apple Music, Spotify, Resso, Live Streams and Telegram Audios & Videos support.
 * Written from scratch, making it stable and less crashes with attractive thumbnails.
@@ -19,7 +19,7 @@
 
 ## 🖇 VPS Deployment
 - Get your [Necessary Variables](https://github.com/TheTeamVivek/YukkiMusic/blob/master/sample.env)
-- clone repo : `git clone https://github.com/TheTeamVivek/YukkiMusic && cd YukkiMusic`
+- clone repo : `git clone https://github.com/Rohansolanki12/YukkiMusic1 && cd YukkiMusic`
 - Setup by : `bash setup`
 - Install tmux to keep running your bot when you close the terminal by :
 `sudo apt install tmux && tmux`
@@ -34,7 +34,7 @@
 
 Reach out to the maintainer at one of the following places:
 
-- [GitHub Issues](https://github.com/TheTeamVivek/YukkiMusic/issues/new?assignees=&labels=question&template=SUPPORT_QUESTION.md&title=support%3A+)
+- [GitHub Issues](https://github.com/Rohansolanki12/YukkiMusic1/issues/new?assignees=&labels=question&template=SUPPORT_QUESTION.md&title=support%3A+)
 - Contact  [Telegram profile](https://t.me/vivekkumar07089)
 - [Telegram Support](https://t.me/TheTeamVk)
 
