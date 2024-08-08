@@ -20,6 +20,7 @@ from pyrogram.errors import (
     FloodWait,
 )
 from pyrogram.types import InlineKeyboardMarkup
+from pyrogram.enums import ChatMemberStatus
 from pytgcalls import PyTgCalls
 from pytgcalls.exceptions import AlreadyJoinedError, NoActiveGroupCall
 from pytgcalls.types import (
@@ -32,7 +33,7 @@ from pytgcalls.types.stream import StreamAudioEnded
 
 import config
 from strings import get_string
-from YukkiMusic import LOGGER, YouTube, app
+from YukkiMusic import LOGGER, YouTube, app, YTB
 from YukkiMusic.misc import db
 from YukkiMusic.utils.database import (
     add_active_chat,
@@ -234,7 +235,10 @@ class Call(PyTgCalls):
                 get = await app.get_chat_member(chat_id, userbot.id)
             except ChatAdminRequired:
                 raise AssistantErr(_["call_1"])
-            if get.status == "banned" or get.status == "kicked":
+            if (
+                get.status == ChatMemberStatus.BANNED
+                or get.status == ChatMemberStatus.RESTRICTED
+            ):
                 try:
                     await app.unban_chat_member(chat_id, userbot.id)
                 except:
@@ -468,9 +472,17 @@ class Call(PyTgCalls):
                         video=True if str(streamtype) == "video" else False,
                     )
                 except:
-                    return await mystic.edit_text(
-                        _["call_7"], disable_web_page_preview=True
-                    )
+                    try:
+                        file_path, direct = await YTB.download(
+                            videoid,
+                            mystic,
+                            videoid=True,
+                            video=True if str(streamtype) == "video" else False,
+                        )
+                    except:
+                        return await mystic.edit_text(
+                            _["call_7"], disable_web_page_preview=True
+                        )
                 if video:
                     stream = MediaStream(
                         file_path,
